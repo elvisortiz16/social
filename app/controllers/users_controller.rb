@@ -14,13 +14,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = @user.find_by(params[:id])
+  def update
+    User.find(params[:id]).update(user_params)
+    redirect_to home_path
   end
 
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, profile_attributes: {})
   end
 
 end

@@ -11,4 +11,10 @@ module HomeHelper
       }
     end.compact
   end
+  def get_posts
+     user_ids = UserFriend.where(user_id:current_user.id).map(&:friend_id)
+     user_ids << UserFriend.where(friend_id:current_user.id).map(&:user_id)
+     user_ids << current_user.id
+     Post.where(user_id: user_ids.flatten).order(created_at: :desc)
+  end
 end

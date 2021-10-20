@@ -2,7 +2,11 @@
 <br>
 <h1>Bio</h1>
  <%= render 'profile' %>
+ <% if current_user.profile %>
  <h1>friends</h1>
  <%= render 'friends' %>
  <h1>feed</h1>
  <%= render 'feed' %>
+ <% else %>
+ you need to capture your bio to see friends and start your posts
+ <% end %>

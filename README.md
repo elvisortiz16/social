@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi i don't have so much time to code and i have this gaps:
+ *better ui/ux, im ussualy use angular in front end
+ *usually im code RoR in API-REST mode
+ *i don't make any test usually i work with rspec
+ *i don't use any design pattern (i have experience with adapter,interactor,services)
 
-Things you may want to cover:
+if you feel uncorfotable about my project i can expend more time on this
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Regards.

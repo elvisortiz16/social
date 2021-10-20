@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root "sessions#create"
 
   resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
+  resources :posts, only: [:new, :create, :edit, :update, :show, :destroy]
+  resources :comments, only: [:new, :create, :edit, :update, :show, :destroy]
 
   get "/home", to: "home#index"
 

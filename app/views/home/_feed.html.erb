@@ -1,1 +1,40 @@
-this is the feed!
+<h2>Create post</h2>
+  <%= form_for Post.new do |f| %>
+        <%= f.text_area :detail, placeholder: "what are you thinking?" %>
+  <br>
+  <%= f.submit "create comment"%>
+  <br>
+  <br>
+  <br>
+  <% end %>
+
+  <h2>Posts</h2>
+<% get_posts.each do |post| %>
+<div style="border:1px solid black">
+<b><%= post.user.profile.name %> </b>
+ wrote: 
+    <%= post.detail %>
+    date: <%= post.created_at.to_formatted_s(:long_ordinal) %>
+    <br>
+    <div style="border:1px solid grey">
+      <h3>Comments</h3>
+      <% post.comments.order(created_at: :desc).each do |comment| %>
+        <div style="border:1px solid grey">
+          <b><%= comment.user.profile.name %> </b>
+          commented: 
+          <%= comment.detail %>
+          date: <%= post.created_at.to_formatted_s(:long_ordinal) %>
+        </div>
+      <% end %>
+    </div>
+    <br>
+      <%= form_for Comment.new do |f| %>
+        <%= f.hidden_field :post_id, :value => post.id %> 
+        <%= f.text_area :detail, placeholder: "comment" %>
+
+  <%= f.submit "insert comment"%>
+  </div>
+  <br>
+  <br>
+  <% end %>
+<% end %>

@@ -1,2 +1,34 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!-- app/views/layouts/application.html.erb -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @page_title %></title>
+  <meta name="description" content="<%= @page_description %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</head>
+<body>
+
+  <div class="container">
+    <div class="grid">
+      <div class="header col_4 cf">
+
+        <div class="logo">
+        </div><!-- end logo -->
+
+        <nav>
+          <%= link_to 'Logout', logout_path %>
+        </nav><!-- end nav -->
+
+      </div><!-- end header -->
+
+    </div><!-- end grid -->
+
+    <%= yield %>
+
+  </div><!-- end contianer -->
+
+
+</body>

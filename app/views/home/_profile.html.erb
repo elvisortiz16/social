@@ -1,11 +1,9 @@
   <%= form_for current_user do |f| %>
-    <%= f.fields_for :profile, current_user.profile || Profile.new do |profile_form| %>
-        <%= profile_form.label :name %>
-        <%= profile_form.text_field :name, placeholder: "Your full name here" %>
-        <br>
-        <%= profile_form.label :bio %>
-        <%= profile_form.text_area :bio, placeholder: "tell me about you" %>
-    <% end %> 
-  <br>
-  <%= f.submit "Update Bio"%>
+  <%= f.fields_for :profile, current_user.profile || Profile.new do |profile_form| %>
+    <%= profile_form.label :name %>
+    <%= profile_form.text_field :name, placeholder: "Your full name here" %>
+    <%= profile_form.label :bio %>
+    <%= profile_form.text_area :bio, placeholder: "tell me about you" %>
   <% end %>
+  <%= f.submit "Update Bio"%>
+<% end %>

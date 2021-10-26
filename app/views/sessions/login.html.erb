@@ -1,13 +1,18 @@
-<% flash.each do |key, value| %>
-  <div class="alert"><%= value %></div>
-<% end %>
-<div>
-  <h2>Log In</h2>
-  <%= form_tag '/login' do %>
-  Username: <%= text_field_tag :username %> <br>
-  Password: <%= password_field_tag :password %> <br>
-  <%= submit_tag "Log In"%>
-  <% end %>
-
-<%= link_to 'Create Account', new_user_path %>
+<div class="container">
+  <div class="card">
+    <h2>Log In</h2>
+    <%= form_tag '/login' do %>
+      Username: <%= text_field_tag :username %>
+      Password: <%= password_field_tag :password %>
+      <div class="center-align">
+        <%= submit_tag "Log In" %>
+      </div>
+      <div class="center-align">
+        <%= link_to 'Create Account', new_user_path %>
+      </div>
+    <% end %>
+    <% flash.each do |key, value| %>
+      <div><%= value %></div>
+    <% end %>
+  </div>
 </div>

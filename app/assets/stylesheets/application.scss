@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "materialize";
+
+body {
+  background-color: #e9ebee;
+}
+
+header {
+  width: 100%;
+  nav {
+    padding: 0 10px 0 150px;
+    background-color: #3b5998 !important;
+  }
+  position: relative;
+}
+
+form {
+  input[type="submit"] {
+    background-color: #3d62b4 !important;
+    padding: 6px 25px !important;
+    border: none;
+    color: white;
+    font-size: 17px;
+    margin-top: -4px !important;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: #3b5998 !important;
+      padding: 5px 24px !important;
+      border: 1px solid rgb(51, 40, 40);
+    }
+  }
+}
+
+.card {
+  background-color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+  overflow-wrap: break-word;
+  .date {
+    font-size: 10px;
+    color: grey;
+  }
+}

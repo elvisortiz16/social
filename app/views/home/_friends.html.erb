@@ -1,6 +1,6 @@
 <% get_friends.each do |val| %>
-    <%= val[:profile_name] %>
-    <%= link_to('add friend', user_friends_friend_path(user_id: current_user.id, friend_id: val[:id]), method: :post) if !val[:already_friend] %>
-    <%= link_to('remove friend', user_friends_unfriend_path(user_id: current_user.id, friend_id: val[:id]), method: :post ) if val[:already_friend] %>
-    <br>
+  <%= val[:profile_name] %>
+  <%= link_to('add friend', user_friends_friend_path(user_id: current_user.id, friend_id: val[:id]), method: :post) if !val[:already_friend] %>
+  <%= link_to('remove friend', user_friends_unfriend_path(user_id: current_user.id, friend_id: val[:id]), method: :post ) if val[:already_friend] %>
+  <br>
 <% end %>

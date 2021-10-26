@@ -1,0 +1,12 @@
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <h4 class="brand-logo big-logo">Social Test</h4>
+      <ul class="right">
+        <% if logged_in? %>
+          <li><%= link_to 'Logout', logout_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

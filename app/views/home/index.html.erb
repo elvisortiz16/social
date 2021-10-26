@@ -1,12 +1,17 @@
-<%= link_to 'Logout', logout_path %>
-<br>
-<h1>Bio</h1>
- <%= render 'profile' %>
- <% if current_user.profile %>
- <h1>friends</h1>
- <%= render 'friends' %>
- <h1>feed</h1>
- <%= render 'feed' %>
- <% else %>
- you need to capture your bio to see friends and start your posts
- <% end %>
+<div class="container">
+  <div class="card">
+    <h3>Bio</h3>
+    <%= render 'profile' %>
+  </div>
+  <% if current_user.profile %>
+    <div class="card">
+      <h3>friends</h3>
+      <%= render 'friends' %>
+    </div>
+    <%= render 'feed' %>
+  <% else %>
+    <div class="card" style="color:red;">
+      you need to capture your bio to see friends and start your posts
+    </div>
+  <% end %>
+</div>

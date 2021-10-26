@@ -1,40 +1,30 @@
-<h2>Create post</h2>
+<div class="card">
+  <h3>Create post</h3>
   <%= form_for Post.new do |f| %>
-        <%= f.text_area :detail, placeholder: "what are you thinking?" %>
-  <br>
-  <%= f.submit "create comment"%>
-  <br>
-  <br>
-  <br>
+    <%= f.text_area :detail, placeholder: "what are you thinking?" %>
+    <%= f.submit "create comment"%>
   <% end %>
-
-  <h2>Posts</h2>
+</div>
 <% get_posts.each do |post| %>
-<div style="border:1px solid black">
-<b><%= post.user.profile.name %> </b>
- wrote: 
-    <%= post.detail %>
-    date: <%= post.created_at.to_formatted_s(:long_ordinal) %>
-    <br>
-    <div style="border:1px solid grey">
-      <h3>Comments</h3>
-      <% post.comments.order(created_at: :desc).each do |comment| %>
-        <div style="border:1px solid grey">
-          <b><%= comment.user.profile.name %> </b>
-          commented: 
-          <%= comment.detail %>
-          date: <%= post.created_at.to_formatted_s(:long_ordinal) %>
-        </div>
-      <% end %>
-    </div>
-    <br>
+  <div class="card">
+    <h4> <%= post.user.profile.name %> </h4>
+    <p class="date"> <%= post.created_at.strftime("%B %d at %H:%M") %></p>
+    <div >
+      <div >
+        <h5>Comments</h5>
+        <% post.comments.order(created_at: :desc).each do |comment| %>
+          <div class="card">
+            <h4> <%= comment.user.profile.name %> </h4>
+            <p class="date"> <%= comment.created_at.strftime("%B %d at %H:%M") %></p>
+            <h6> <%= comment.detail %></h6>
+          </div>
+        <% end %>
+      </div>
       <%= form_for Comment.new do |f| %>
-        <%= f.hidden_field :post_id, :value => post.id %> 
+        <%= f.hidden_field :post_id, :value => post.id %>
         <%= f.text_area :detail, placeholder: "comment" %>
-
-  <%= f.submit "insert comment"%>
-  </div>
-  <br>
-  <br>
+        <%= f.submit "insert comment"%>
+      </div>
+    </div>
   <% end %>
 <% end %>
